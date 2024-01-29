@@ -1,7 +1,19 @@
-# Game of Life Visualization
+# TD1 of decentralization technologies.
+### Made by Jack Heger
+## game_of_life
 
-## Overview
-This Python script visualizes Conway's Game of Life using NumPy and Matplotlib. The Game of Life is a cellular automaton where cells evolve based on simple rules.
+#### Description :
+The Game of Life is a cellular automaton devised by mathematician John Conway, in which cells evolve based on simple rules and their neighbors' states, creating complex and emergent patterns.
+
+#### How to run the program :
+1. In your terminal run : 
+git clone https://github.com/jackheger/game_of_life-HEGER-CDOF5.git
+
+2. Again in the terminal run the command : 
+python game.py
+
+3. Enjoy and watch the game of life begin !
+
 
 ## Features
 - Generates a random initial grid of cells.
@@ -12,10 +24,9 @@ This Python script visualizes Conway's Game of Life using NumPy and Matplotlib. 
 - NumPy
 - Matplotlib
 
-## Usage
-To run the simulation, simply execute the script. The initial grid and number of iterations are predefined but can be modified as needed.
-
-```python
+'''python
 grid = np.random.choice([0, 1], size=(50, 50), p=[0.8, 0.2])
 num_iterations = 100
 animate_game_of_life(grid, num_iterations)
+
+
