@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+from matplotlib.colors import ListedColormap
 
 def game_of_life(grid, num_iterations):
     height, width = grid.shape
@@ -23,19 +24,24 @@ def game_of_life(grid, num_iterations):
         grid = np.copy(next_grid)
         yield grid
 
-def animate_game_of_life(grid, num_iterations):
+def animate_game_of_life(grid, num_iterations, live_color='black', dead_color='white'):
     fig = plt.figure()
     plt.axis('off')
     ims = []
 
-    for i, state in enumerate(game_of_life(grid, num_iterations)):
-        im = plt.imshow(state, cmap='binary', animated=True)
+    # Créer un colormap personnalisé
+    cmap = ListedColormap([dead_color, live_color])
+
+    for state in game_of_life(grid, num_iterations):
+        im = plt.imshow(state, cmap=cmap, animated=True)
         ims.append([im])
 
     ani = animation.ArtistAnimation(fig, ims, interval=200, blit=True, repeat_delay=1000)
     plt.show()
 
+
 grid = np.random.choice([0, 1], size=(50, 50), p=[0.8, 0.2])
 num_iterations = 100
 
-animate_game_of_life(grid, num_iterations)
+# Exemple d'utilisation
+animate_game_of_life(grid, num_iterations, live_color='red', dead_color='blue')

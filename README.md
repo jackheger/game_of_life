@@ -13,3 +13,20 @@ git clone https://github.com/jackheger/game_of_life-HEGER-CDOF5.git
 python game.py
 
 3. Enjoy and watch the game of life begin !
+
+
+## Features
+- Generates a random initial grid of cells.
+- Simulates the Game of Life for a given number of iterations.
+- Animates the evolution of the cells using Matplotlib.
+
+## Dependencies
+- NumPy
+- Matplotlib
+
+'''python
+grid = np.random.choice([0, 1], size=(50, 50), p=[0.8, 0.2])
+num_iterations = 100
+animate_game_of_life(grid, num_iterations)
+
+
